@@ -148,13 +148,15 @@ setInterval(() => {
         document.querySelectorAll(".progress").length ==
         parseFloat(progress.offsetParent.id)
       ) {
+        progress.nextElementSibling.currentTime = 0
         location.hash = "#" + 1;
       } else {
+        progress.nextElementSibling.currentTime = 0
         location.hash = "#" + (parseFloat(progress.offsetParent.id) + 1);
       }
     }
   });
-}, 100);
+}, 10);
 
 let getContrastColors = () => {
   Object.values(videos).map((video, i) => {
@@ -172,7 +174,7 @@ let getContrastColors = () => {
         }
         clearInterval(checkVideo);
       }
-    }, 100);
+    }, 1);
 
     // function canvasLoaded(canvas, video) {
     //   drawImg(canvas, video);
